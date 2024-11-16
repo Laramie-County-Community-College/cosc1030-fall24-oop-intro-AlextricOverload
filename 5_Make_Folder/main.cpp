@@ -18,17 +18,43 @@ Area: 6.00
 using namespace std;
 
 int main() {
+   // Declare variables
    Triangle triangle1;
    Triangle triangle2;
+   double userBaseIn;
+   double userHeightIn;
 
-   // TODO: Read and set base and height for triangle1 (use SetBase() and SetHeight())
+   // Read and set base and height for triangle1 (use SetBase() and SetHeight())
+   // Get inputs
+   cout << "Enter the base of the first triangle:" << endl;
+   cin >> userBaseIn;
+   cout << "Enter the height of the first triangle:" << endl;
+   cin >> userHeightIn;
+
+   // Set values
+   triangle1.SetBase(userBaseIn);
+   triangle1.SetHeight(userHeightIn);
       
-   // TODO: Read and set base and height for triangle2 (use SetBase() and SetHeight())
+   //Read and set base and height for triangle2 (use SetBase() and SetHeight())
+   // Get inputs
+   cout << "Enter the base of the second triangle:" << endl;
+   cin >> userBaseIn;
+   cout << "Enter the height of the second triangle:" << endl;
+   cin >> userHeightIn;
+
+   // Set values
+   triangle2.SetBase(userBaseIn);
+   triangle2.SetHeight(userHeightIn);
        
    cout << "Triangle with smaller area:" << endl;
    
-   // TODO: Determine smaller triangle (use GetArea())  
-   //       and output smaller triangle's info (use PrintInfo())
+   // Determine smaller triangle
+   if (triangle1.GetArea() < triangle2.GetArea()) {  // Triangle 1 is smaller
+      triangle1.PrintInfo();  // Print triangle1 info
+   }
+   else {  // Triangle 2 is smaller
+      triangle2.PrintInfo();  // Print triangle2 info
+   }
    
    return 0;
 }
